@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+html, body, #app {
+  @apply bg-gray-200 text-gray-900 h-full w-full;
+}
+
+.checkerboard {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black' opacity='0.1'><rect width='8' height='8'/><rect x='8' y='8' width='8' height='8'/></svg>");
+}
+
+.grid-stack-item-content {
+  @apply bg-white rounded-md;
+}
+
+label {
+  @apply select-none;
+}
+
+.button, .input, .select {
+  @apply flex items-center border shadow-sm rounded-lg p-1 bg-white text-blue-500 hover:opacity-70 focus:ring-blue-800 focus:ring-2 outline-none font-semibold;
+}
+
+.button.active, .input.active, .select.active {
+  @apply bg-blue-500 text-white font-bold;
+}
+
+.button[readonly], .input[readonly], .select[readonly] {
+  @apply bg-gray-200 cursor-auto;
+}
+
+.button, .select {
+  @apply cursor-pointer select-none;
+}
+
+.movingOffset {
+  stroke-dashoffset: 0;
+  animation: dashOffsetLoop 0.5s linear infinite;
+}
+
+@keyframes dashOffsetLoop {
+  to {
+    stroke-dashoffset: 0.6;
+  }
+}
+
+.header {
+  @apply flex items-center gap-4 bg-gradient-to-b from-slate-800 to-slate-900 text-white font-semibold px-4 py-2 text-lg select-none;
+}
+
+.icon svg {
+  @apply w-full h-full max-w-full max-h-full object-contain;
+}
